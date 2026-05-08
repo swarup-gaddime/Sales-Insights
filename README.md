@@ -1,38 +1,49 @@
 # Sales Insights Data Analysis Project
+## Overview
 
-## Data Analysis Using SQL
-### 1.Show all customer records
+This project focuses on analyzing sales data to generate meaningful business insights using SQL, Python, and Power BI. The objective is to clean, transform, and visualize sales data to help businesses make data-driven decisions.
 
-SELECT * FROM customers;
+## The project includes:
 
-### 2.Show total number of customers
+Data Cleaning and Preprocessing
+SQL Queries for Business Insights
+Exploratory Data Analysis (EDA)
+Interactive Power BI Dashboard
+Sales Performance Analysis
 
-SELECT count(*) FROM customers;
+## Project Workflow
 
-### 3.Show transactions for Chennai market (market code for chennai is Mark001
+### 1. Data Collection
+Imported sales dataset into MySQL database.
+Connected MySQL with Power BI for visualization.
 
-SELECT * FROM transactions where market_code='Mark001';
+### 2. Data Cleaning
+Removed null values and duplicates.
+Converted incorrect datatypes.
+Handled missing values.
+Standardized column names.
 
-### 4.Show distrinct product codes that were sold in chennai
+### 3. Exploratory Data Analysis
+Performed analysis on:
+Total Sales
+Revenue Trends
+Top Customers
+Top Products
+Sales by Region
+Monthly and Yearly Sales Growth
 
-SELECT distinct product_code FROM transactions where market_code='Mark001';
+### 4. Dashboard Creation
+Created an interactive Power BI dashboard with:
+KPI Cards
+Revenue Charts
+Region-wise Sales Analysis
+Customer Insights
+Product Performance
+Profit Analysis
 
-### 5.Show transactions where currency is US dollars
-
-SELECT * from transactions where currency="USD"
-
-### 6.Show transactions in 2020 join by date table
-
-SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;
-
-### 7.Show total revenue in year 2020,
-
-SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";
-
-### 8.Show total revenue in year 2020, January Month,
-
-SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");
-
-### 9.Show total revenue in year 2020 in Chennai
-
-SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.market_code="Mark001";
+### Key Insights
+Identified top-performing products and regions.
+Analyzed customer purchasing behavior.
+Found monthly revenue growth trends.
+Detected low-performing sales areas.
+Improved decision-making using dashboards.
